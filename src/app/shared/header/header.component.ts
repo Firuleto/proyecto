@@ -9,6 +9,10 @@ export class HeaderComponent implements OnInit {
 
   public title: string = "Firuleto";
 
+  public style: any={color:'red'}
+
+  public categoria : string='A';
+
   constructor() { }
 
   ngOnInit() {
