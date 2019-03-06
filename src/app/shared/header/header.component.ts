@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public title: string = "Firuleto";
+  @Input('titulo') title: string;
 
   public style: any={color:'red'}
 
-  public categoria : string='A';
+  @Input () categoria : string;
 
   constructor() { }
 
