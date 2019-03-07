@@ -1,6 +1,7 @@
 export class Auto {
-    public motor:string;
+    public motor: String; 
+
     constructor(){
-        
+
     }
 }

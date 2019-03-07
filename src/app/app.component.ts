@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {Articulo, Abarrotes, Electronico, Samsung, Auto, Ford, Chevrolet} from './modelos/'
-
+import { Articulo,Abarrote,Electronico,Samsung,Lg,Auto,Ford,Chevrolet} from './modelos';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +7,28 @@ import {Articulo, Abarrotes, Electronico, Samsung, Auto, Ford, Chevrolet} from '
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'proyecto';
-
+  title = 'angularTest';
   constructor(){
     let articulo: Articulo;
 
-    let categoria='abarrotes';
-    if(categoria=='abarrotes'){
-      articulo= new Abarrotes();
-      console.log(articulo.imprimir())
+    let categoria= 'electrónico';
+    //let categoria2= 'electrónico';
+
+    if(categoria=='electrónico'){
+      articulo = new Electronico();
+      console.log("hi "+articulo.imprimir());
     }
-    let samsung:Samsung= new Samsung();
+
+    let samsung:Samsung = new Samsung();
     console.log(samsung.getCategoria());
-
-    let ford: Auto= new Ford();
-    console.log(ford.motor);
+    /*
+    if(categoria2=='electrónico'){
+      articulo = new Electronico();
+      console.log("hi "+articulo.imprimir());
+    }
+    */
+    let ford: Auto = new Ford();
+    console.log(ford.motor) ;
+    
   }
-
-  
 }

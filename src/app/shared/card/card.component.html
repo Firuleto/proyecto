@@ -1,7 +1,13 @@
-<div class="card text-center">
-  <app-header [titulo]="articulo.title" [categoria]="articulo.categoria"></app-header>
-    <img [src]="articulo.url" class="card-img-top" alt="...">
+<div class="card text-center border-black" [ngClass]="{'border-black':border}">
+  Fecha: {{articulo.fecha | date:'dd-MM-yyyy hh:mm:ss a'}}
+    <header [titulo]="articulo.title"></header>
+    <header [categoria]="articulo.categoria"></header>
+    
+    
+  <img [src]="articulo.url"  class="card-img-top" alt="...">
 
-  <app-body [precio]="articulo.precio" [description]="articulo.description"></app-body>
-  <app-footer></app-footer>
+  <app-body [description]="articulo.description"></app-body>
+  <app-body [precio]="articulo.precio"></app-body>
+  <app-footer (onEliminar)="accionEliminar($event)" (onSeleccionar)="accionSeleccionar($event)" [color]="articulo.promotion"></app-footer>
+
 </div>

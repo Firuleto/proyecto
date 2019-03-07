@@ -1,20 +1,16 @@
-import {Articulo} from './articulo';
+import {Articulo} from './articulo'
 
-
-export class Abarrotes implements Articulo {
-
-    public nombre: string;
+export class Abarrote  implements Articulo{
+    public nombre: String;
     public precio: number;
-    public categoria: string;
-
+    public categoria: string; 
     constructor(){
-        this.categoria='abarrotes';
-
+        this.categoria = 'abarrote';
     }
 
     public imprimir(): string{
-        let nombre:string='categoria';
-        return nombre + ': ' + this.categoria;
+        let nombre: String = 'categoria';
+        return nombre + ' : ' + this.categoria;
     }
 
     public esAbarrotes(): boolean{

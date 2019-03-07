@@ -7,8 +7,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
 
-  @Input () description: string;
-  @Input () precio: number;
+  @Input ('description') description: string;
+
+  @Input ('precio') precio: number;
+
   constructor() { }
 
   ngOnInit() {

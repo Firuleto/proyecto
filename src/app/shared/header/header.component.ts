@@ -1,21 +1,36 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input,SimpleChanges,OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
+  selector: 'header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit,OnChanges {
+  @Input ('titulo') title: string;
 
-  @Input('titulo') title: string;
+  public style: any={
+    color: 'red',
+    'font-size':'24px'
+  };
 
-  public style: any={color:'red'}
-
-  @Input () categoria : string;
+  @Input ('categoria') categoria: string;
+  
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  ngOnChanges(changes: SimpleChanges) {
+    for (let propName in changes) {
+      let chng = changes[propName];
+      let cur  = JSON.stringify(chng.currentValue);
+      let prev = JSON.stringify(chng.previousValue);
+
+      console.log("cur", cur);
+      console.log("pre", prev);
+
+
+    }
+  }
 }

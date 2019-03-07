@@ -1,11 +1,16 @@
 export interface Articulo {
-    nombre: String;
-    marca?: String;
-    precio: number;
+    nombre: String; 
+    marca?: String; 
+    precio: number; 
+
     imprimir?;
-    title?:string;
-    desciption?:string;
+
+    title?: string;
+    description?: string;
     promotion?:boolean;
+
     categoria?:string;
     url?: string;
+    id?: number;
+    fecha?: Date;
 }
