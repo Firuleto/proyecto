@@ -4,16 +4,25 @@
       <thead>
         <button (click)="nuevo(template)" class="btn btn-primary btn-xs pull-right"><b>+</b> Nuevo</button>
         <tr>
-          <th>ID</th>
-          <th>Title</th>
-          <th>Parent ID</th>
+          <th>Nombre</th>
+          <th>Marca</th>
+          <th>Precio</th>
+          <th>Título</th>
+          <th>Descripción</th>
+          <th>Promoción</th>
+          <th>Categoria</th>
           <th class="text-center">Action</th>
         </tr>
       </thead>
       <tr *ngFor="let articulo of articulos">
-        <td>{{articulo.id}}</td>
+          <td>{{articulo.nombre}}</td>
+          <td>{{articulo.marca}}</td>
+          <td>{{articulo.precio}}</td>
         <td>{{articulo.title}}</td>
         <td>{{articulo.description}}</td>
+        <td>{{articulo.promotion}}</td>
+        <td>{{articulo.categoria}}</td>
+       
         <td class="text-center">
           <button (click)="editar(articulo,template)" class='btn btn-info btn-xs'><span class="glyphicon glyphicon-edit"></span>
             Editar
@@ -40,14 +49,13 @@
 
 
   <div class="modal-body">
-    
+      <div *ngIf="formArticulo.valid" class="alert alert-success" role="alert">
+          El formulario es correcto
+        </div>
+      <div *ngIf="!formArticulo.valid" class="alert alert-danger" role="alert">
+          El formulario no es correcto
+        </div>
     <div [formGroup]="formArticulo">
-      {{formArticulo.value | json}}
-      <div class="form-group">
-        <label for="idInput">id</label>
-        <input formControlName="id" type="number" class="form-control" id="idInput" aria-describedby="emailHelp"
-          placeholder="ID">
-      </div>
       <div class="form-group">
         <label for="nombreInput">Nombre</label>
         <input formControlName="nombre" type="text" class="form-control" id="nombreInput" aria-describedby="emailHelp"
@@ -93,11 +101,12 @@
         <input formControlName="fecha" type="date" class="form-control" id="fechaInput" aria-describedby="emailHelp"
           placeholder="Fecha">
       </div>
-
+      <small *ngIf="formArticulo.get('nombre').errors?.required">Te falta el nombre chavo</small>
 
 
 
       <button type="submit" class="btn btn-primary" (click)="agregar()">Agregar</button>
+
     </div>
 
 

@@ -31,6 +31,7 @@ export class ArticulosService {
         this.articulos.splice(i,1);
       }
     }
+  }
 
     public actualizar(articulo:Articulo){
       for(let i=0; i<this.articulos.length;i++){
@@ -39,5 +40,5 @@ export class ArticulosService {
         }
       }
     }
-  }
+ 
 }
