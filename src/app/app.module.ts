@@ -10,6 +10,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './pages/admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MenusComponent } from './pages/menus/menus.component';
+import { IniciosesionComponent } from './pages/iniciosesion/iniciosesion.component';
+import { InfoArticuloComponent } from './pages/info-articulo/info-articulo.component';
 
 
 
@@ -20,6 +22,8 @@ import { MenusComponent } from './pages/menus/menus.component';
     UppercasePipe,
     AdminComponent,
     MenusComponent,
+    IniciosesionComponent,
+    InfoArticuloComponent,
 
   ],
   imports: [
